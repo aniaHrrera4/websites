@@ -1,0 +1,81 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<link rel="styleSheet" type="text/css" href="C:/Users/students/Documents/Portfolio/styleSheet.css"/> 
+	<script type="text/javascript" src="C:/Users/students/Documents/Portfolio/javascript.js"> </script>
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+<style type="text/css">
+#map{
+width:75%;
+height:500px;
+position:relative;
+left:150px;
+background-color:grey;
+}
+
+.Col{
+background-color: #862d2d
+;
+}
+
+</style>
+
+
+
+</head>
+  <body class="Col">
+  
+    <h3 class="banner" >My favorite places</h3>
+    <div id="map"></div>
+	
+    <script>
+      function initMap() {
+		  var myLatLng = {lat: 41.6298, lng: -87.6298};
+
+		  var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 4,
+			center: myLatLng
+		  });
+
+			var fount ='c:/users/students/Documents/Portfolio/images/fount.png'
+			var founticon= new google.maps.Marker({
+			position: {lat: 41.872875, lng:-87.654017  },
+			map: map,
+			icon: fount,
+			title: 'fountain'
+		  });
+		
+		var city='c:/users/students/Documents/Portfolio/images/city.png'
+			var cityicon= new google.maps.Marker({
+			position: {lat: 41.878114, lng:-87.629798   },
+			map: map,
+			icon: city,
+			title: 'chicago'
+		  });
+		var home='c:/users/students/Documents/Portfolio/images/home.png'
+			var homeicon= new google.maps.Marker({
+			position: {lat: 41.592591, lng:-88.155399 },
+			map: map,
+			size:(20,20),
+			icon: home,
+			title: 'mi casa'
+		  });
+		
+		var space='c:/users/students/Documents/Portfolio/images/space.png'
+			var spaceicon= new google.maps.Marker({
+			position: {lat: 41.870331,  lng:-87.623574 },
+			map: map,
+			icon: space,
+			title: 'planetarium'
+		  });
+		 }
+	</script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBRnqkHyRSa2FCx4wmpVaQyBPQoBo-Z2bI&callback=initMap">
+    </script>
+</body>
+</html>
+<!---center: {lat: 41.8781, lng: -87.6298},-->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>JS Example</title>
+    <script>
+	
+     function myFunction(){
+        var image=document.getElementById("welcome");
+
+		if (image.src.match("C:/Users/students/Documents/Portfolio/images/background4.jpg")){
+			image.src="C:/Users/students/Documents/Portfolio/images/background2.jpg";
+			alt="image 1";
+		}
+		else{
+			image.src="C:/Users/students/Documents/Portfolio/images/background4.jpg";
+			image.alt="image 2";
+		}	 
+}		
+	  
+    </script>
+  </head>
+  <body>
+  <h3>Welome to my page</h3>
+    <img id="welcome"; onclick="myFunction()" src="C:/Users/students/Documents/Portfolio/images/background2.jpg"; alt="image 1"></img>
+  </body>
+</html>

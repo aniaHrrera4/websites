@@ -1,0 +1,132 @@
+<!doctype HTML>
+<html>
+
+<head>
+<title>Main page. </title>
+<link rel="stylesheet" type="text/css" href="../style sheet island.css" />
+	<script>
+		function displayclock() {
+		var total="It's time for a tropical vacation!!!! the current time is: <br/>";
+        var time = new Date();{
+			
+							if (time.getHours()==0)
+							{ time.getHours()=12;}
+							
+			var hours=time.getHours()
+			var hour=parseInt(hours)-12;
+				  
+							if (time.getHours()>=12)
+								{total=total+hour+":";}
+								
+							if (time.getHours()<=12)
+								{total=total+hours+":";}
+                  
+							if (time.getMinutes()<10)
+									total=total+ "0"+time.getMinutes()+":";
+							else {total=total+time.getMinutes()+":";}
+
+							if (time.getSeconds()<10)
+									 {total=total+"0"+time.getSeconds();}
+							else{total= total+time.getSeconds();}	
+				
+
+							if (time.getHours()>=12)
+								total= total+" P.M.";
+							else
+								total= total+" A.M.";
+
+							document.getElementById("showinfo").innerHTML=  total ;
+							setTimeout("displayclock()",1000);
+		}
+		}
+			
+		
+		</script>
+<script>
+var days=0;
+var nights=0;
+var priceH=0;
+var foodA=0;
+var totalH=0;
+var total=0;
+function vacationPrice(){
+	priceH=parseInt(prompt( "what price do you want to pay per night at a hotel?", " "));
+	days=parseInt(prompt( "How many days do plan to stay?", " "));
+	nights=parseInt(prompt( "How many nights do plan to stay?", " "));
+		totalH= priceH*nights;
+	foodA=parseInt(prompt( " how much do you plan to spend on food and activities for your vacation?", " "));
+		total=totalH+foodA;
+document.getElementById("Htotal").innerHTML=  "total of hotel price:$" +totalH ;
+document.getElementById("Ftotal").innerHTML=  "total amout for food and activities :$" +foodA ;
+document.getElementById("total").innerHTML=  "total amount per vacation:$" +total ;
+}
+</script>
+
+</head>
+
+<body id="navbar" class="mainpage" onload="displayclock()">
+
+
+<div class="divcol1">
+<h1> Conzumel Island </h1>
+<p id="showinfo">
+</p>
+</div>
+
+<br/><br/><br/><br/>
+<ul id="navbarul" >
+	<li id="navebarli"><a href="../Accommodations/Accommodations.html">Accommodations</a></li>
+	<li id="navebarli"><a href="../Restaurants/restaurants.html">Restaurants</a></li>
+	<li id="navebarli"><a href="../Activities/activities.html">Activities</a></li>
+	<li id="navebarli"><a href="../Shopping/shopping.html">Shopping</a></li>
+</ul>
+
+
+<table border="3" id="table1">
+<caption></caption>
+	<tr>
+		<td class="td1">
+		Cozumel, is a mexican island in the Caribbean Sea, is a popular cruise ship port of call famed for
+		 its scuba diving.   At Arrecifes de Cozumel National Park, divers can explore a section of the
+		 Mesoamerican Reef and Museo Subacuatico de Artes submerged sculptures. Chankanaab is an eco
+		 park surrounding a lagoon with underwater caverns, home to dolphins, manatees and sea turtles.
+		 <br/><br/>
+		Population: 100,000 (2011) <br/>
+		Capital: San Miguel de Cozumel<br/>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="td1">
+		Price ranges for hotels per night: <br/>
+		
+				under $50 <br/>
+				between $50 and $75 <br/>
+				between $75 and $100<br/>
+				between $100 and $150 <br/>
+				over $150 per night 
+		<center>
+		<br/>
+			<form> 
+				<input type="button" value="Your tropical vacation value" onclick="vacationPrice()" />
+			</form>
+		</center>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="td1">
+			<ul>
+				<li id="Htotal"> </li>
+				<li id="Ftotal"> </li>
+				<li id="total"> </li>
+			</ul>
+		</td>
+	</tr>
+</table>
+
+
+
+</body>
+
+</html>

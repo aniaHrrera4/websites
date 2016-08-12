@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Assignment 22 D</title>
+  <style type="text/css">
+     body {
+     color: black;
+     background-color:#6699FF;
+    text-align:center;
+           }
+   </style> 
+
+          <script type="text/javascript">
+		  function clock(){
+           //****************************************************************************************|
+           //		Defines variables
+           //****************************************************************************************|
+            var total="According to your system clock this page was loaded on: <br/>";
+            var time = new Date();
+           //****************************************************************************************|
+           //		Function gets Number of day of week then assigns Text for Day.
+           //****************************************************************************************|
+				   if (time.getDay()==0) { total = total + "Sunday" ;}
+				   else if (time.getDay()==1) {total= total+ "Monday";}
+				   else if (time.getDay()==2) {total= total+ " Tuesday";}
+				   else if (time.getDay()==3) {total= total+ " Wednesday";}
+				   else if (time.getDay()==4) {total= total+ " Thursday";}
+				   else if (time.getDay()==5) {total= total+ " Friday";}
+				   else  {total= total+ " Saturday";}
+		   
+					total=total+", "
+
+           //****************************************************************************************|
+           //		Function gets Number of month of year then assigns Text for Month
+           //		then adds it to total
+           //****************************************************************************************|
+                   
+                    if (time.getMonth()==0){total= total + "January";}
+                    else if (time.getMonth()==1){total= total+ "Febuary";}
+                    else if (time.getMonth()==2) {total= total+ "March";}
+                    else if (time.getMonth()==3) {total= total+ "April";}
+                    else if (time.getMonth()==4) {total= total+ "May";}
+                    else if (time.getMonth()==5) {total= total+ "June";}
+                    else if (time.getMonth()==6) {total= total+ "July";}
+                    else if (time.getMonth()==7) {total= total+ "August";}
+                    else if (time.getMonth()==8) {total= total+ "September";}
+                    else if (time.getMonth()==9) {total= total+ "October";}
+                    else if (time.getMonth()==10) {total= total+ "November";}
+                    else {total= total+ "December";}
+					total=total+" "
+            //****************************************************************************************|
+            //		Function gets numberic day of month and adds it to total
+            //****************************************************************************************|
+                  { total=total+ time.getDate()+ " ";}
+
+            //****************************************************************************************|
+            //		Function gets numberic year and adds it to total
+            //****************************************************************************************|
+                    {total= total+""+ " in the year " + time.getFullYear() +" " ;}
+                   
+                    
+            //****************************************************************************************|
+            //		Function gets numberic Hours and adds it to total
+            //****************************************************************************************|
+
+                    {total=total+ "at "+time.getHours()+":" ;}
+                   
+            //****************************************************************************************|
+            //		Function gets numberic Minutes and adds it to total
+            //****************************************************************************************|
+                  
+                    {total= total+ time.getMinutes()+":"}
+                    
+            //****************************************************************************************|
+            //		Function gets numberic Seconds and adds it to total
+            //****************************************************************************************|
+                    
+    
+                    {total= total+time.getSeconds();}
+            //****************************************************************************************|
+            //		write the accumulated message to the div in body
+            //****************************************************************************************|
+                    
+            document.getElementById("showinfo").innerHTML=  total ;
+		    }
+            </script>
+
+			</head>
+
+        <body onload="clock()">
+        
+        <br /><br /><br />
+        <!-- ********************************************************************************** -->
+        <!--     	Create <div id="showinfo"> to show the accumulated string         	-->
+        <!-- ********************************************************************************** -->
+        <div id="showinfo">
+        
+        
+        
+        </div>
+        <!-- ********************************************************************************** -->
+        <!--        							                        -->
+        <!-- ********************************************************************************** -->
+        
+        
+        </body>
+
+</html>

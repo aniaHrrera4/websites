@@ -1,0 +1,100 @@
+<html>
+	<head>
+		<title>seconds clock L27</title>
+		<style type="text/css">
+		body {  
+			 color: white; 
+			 background-color:#660033;
+			} 
+		</style>
+		<script>
+		
+		function displayclock() {
+		var total="According to your system clock this page was loaded on: <br/>";
+            var time = new Date();{
+			
+           //****************************************************************************************|
+           //		array for day of week
+           //****************************************************************************************|
+		   
+            mydayarray = new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday");
+
+				total= total+mydayarray[time.getDay()]+ ",  "; 
+				
+			//****************************************************************************************|
+           //		array for month
+           //****************************************************************************************|	
+		   
+		   myMontharray = new Array("January" ,"Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December")
+		   
+				total= total+myMontharray[time.getMonth()]+ " "; 
+		   //****************************************************************************************|
+           //		Date and year 
+           //****************************************************************************************|
+		   
+		     { total=total+ time.getDate()+ " ";}
+			 {total= total+""+ " in the year " + time.getFullYear() +" "+ "at ";}
+
+            //****************************************************************************************|
+            //		Function gets numberic Hours and adds it to total
+            //****************************************************************************************|
+				
+							if (time.getHours()==0)
+							{ time.getHours()=12;}
+							
+					var hours=time.getHours()
+					var hour=parseInt(hours)-12;
+				  
+							if (time.getHours()>=12)
+								{total=total+hour+":";}
+								
+							if (time.getHours()<=12)
+								{total=total+hours+":";}
+            //****************************************************************************************|
+            //		Function gets numberic Minutes and adds it to total
+            //****************************************************************************************|
+                  
+                    if (time.getMinutes()<10)
+							total=total+ "0"+time.getMinutes()+":";
+				     else {total=total+time.getMinutes()+":";}
+            //****************************************************************************************|
+            //		Function gets numberic Seconds and adds it to total
+            //****************************************************************************************|
+					if (time.getSeconds()<10)
+							 {total=total+"0"+time.getSeconds();}
+					else{total= total+time.getSeconds();}	
+				
+		     //****************************************************************************************|
+            //		For PM the hour has to be greater than 12 any thing else is PM
+            //****************************************************************************************|		
+							if (time.getHours()>=12)
+								total= total+" P.M.";
+							else
+								total= total+" A.M.";
+			//****************************************************************************************|
+            //		write the accumulated message to the div in body
+            //****************************************************************************************|
+							
+								document.getElementById("showinfo").innerHTML=  total ;
+
+					setTimeout("displayclock()",1000);
+		}
+		}
+			
+		
+		</script>
+	</head>
+	<center>
+	<body onload="displayclock()"> 
+		 
+		
+		<br /><br /><br /><br />
+			<div id="showinfo">
+				
+			
+			</div>
+		
+		<br />
+	</body>
+	</center>
+</html>

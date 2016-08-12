@@ -1,0 +1,101 @@
+<!doctype HTML>
+<html>
+
+<head>
+<title>Restaurants</title>
+<link rel="stylesheet" type="text/css" href="../style sheet island.css" />
+<script type="text/Javascript">
+function displayclock() {
+		var total="It's time for a tropical vacation!!!! the current time is: <br/>";
+        var time = new Date();{
+			
+							if (time.getHours()==0)
+							{ time.getHours()=12;}
+							
+			var hours=time.getHours()
+			var hour=parseInt(hours)-12;
+				  
+							if (time.getHours()>=12)
+								{total=total+hour+":";}
+								
+							if (time.getHours()<=12)
+								{total=total+hours+":";}
+                  
+							if (time.getMinutes()<10)
+									total=total+ "0"+time.getMinutes()+":";
+							else {total=total+time.getMinutes()+":";}
+
+							if (time.getSeconds()<10)
+									 {total=total+"0"+time.getSeconds();}
+							else{total= total+time.getSeconds();}	
+				
+
+							if (time.getHours()>=12)
+								total= total+" P.M.";
+							else
+								total= total+" A.M.";
+
+							document.getElementById("showinfo").innerHTML=  total ;
+							setTimeout("displayclock()",1000);
+		}
+		}
+			
+		
+</script>
+<script type="text/Javascript">
+
+function foodChoice(x){
+	if(x==1){
+	document.getElementById("RestChosen").innerHTML="RESTAURANT CASA MISSION <br/> The beautiful colonial style makes of Casa Mission a perfect remembrances of the glory days of the Yucatan peninsula. Casa Mission offers our guests a unique atmosphere that transports them through the history of our country and gives them the opportunity of enjoying a magnificent Mexican restaurant in Cozumel.<br/>"+'<img src="imagesRest/casaMissionOut.jpg" height="250" width="300" alt="Casa mission" />'+'<img src="imagesRest/MissionIN.jpg" height="200" width="300" alt="Casa Mission" /> <br/>'+'<img src="imagesRest/Missionfoodjpg.jpg" height="200" width="200" alt="Mission food" />';
+	}if(x==2){
+	document.getElementById("RestChosen").innerHTML="La Perlita <br/>this restaurant is set well back from the water and away from all the tourist joints. Here, it's just a casual atmosphere and fresh, authentic Yucatecan seafood dishes served in a simple home style, at a reasonable price.<br/>"+'<img src="imagesRest/perlita.jpg" height="250" width="300" alt="La Perltia" />'+'<img src="imagesRest/Paella.jpg" height="200" width="200" alt="Perlita food" />';
+	}if(x==3){
+	document.getElementById("RestChosen").innerHTML="Pizza Hut <br/>"+'<img src="imagesRest/pizzaHut.jpg" height="200" width="300" alt=" Pizza Hut" />'+'<img src="imagesRest/pizza.jpg" height="200" width="300" alt="Pizza" />';
+	}
+
+}	
+</script>
+</head>
+
+<body id="navRest" class="Rest" onload="displayclock()" onload="foodChoice(x)">
+
+<div class="divcol1">
+<h2> Restaurants</h2>
+<p id="showinfo">
+</p>
+</div>
+
+<br/>
+<ul id="navRest" >
+	<li id="navRestli"><a href="../Mainpage/mainpageB.html">Back to main page</a></li>
+	<li id="navRestli"><a href="../Accommodations/Accommodations.html">Accommodations</a></li>
+	<li id="navRestli"><a href="../Activities/activities.html">Activities</a></li>
+	<li id="navRestli"><a href="../Shopping/shopping.html">Shopping</a></li>
+</ul>
+
+<table border="3" id="table3">
+<caption></caption>
+	<tr>
+		<td class="td3">
+			<center>
+			What kind of food are you in the mood for? 
+				<form> <br/>
+				<input type="radio" name="radiobutton" onClick="foodChoice(1)">Traditional Mexican food<br/>
+				<input type="radio" name="radiobutton" onClick="foodChoice(2)">Island cuisine (seafood)<br/>
+				<input type="radio" name="radiobutton" onClick="foodChoice(3)"> Fast food (Pizza) <br/>
+				</form>
+			</center>
+		</td>
+	</tr>
+	
+	<tr>
+		<td class="td3" id="RestChosen">
+			
+		</td>
+	
+	</tr>
+</table>
+
+</body>
+
+</html>

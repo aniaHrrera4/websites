@@ -1,0 +1,124 @@
+<!doctype HTML>
+<html>
+
+<head>
+<title>Activities</title>
+<link rel="stylesheet" type="text/css" href="../style sheet island.css" />
+<script type="text/Javascript">
+function displayclock() {
+		var total="It's time for a tropical vacation!!!! the current time is: <br/>";
+        var time = new Date();{
+			
+							if (time.getHours()==0)
+							{ time.getHours()=12;}
+							
+			var hours=time.getHours()
+			var hour=parseInt(hours)-12;
+				  
+							if (time.getHours()>=12)
+								{total=total+hour+":";}
+								
+							if (time.getHours()<=12)
+								{total=total+hours+":";}
+                  
+							if (time.getMinutes()<10)
+									total=total+ "0"+time.getMinutes()+":";
+							else {total=total+time.getMinutes()+":";}
+
+							if (time.getSeconds()<10)
+									 {total=total+"0"+time.getSeconds();}
+							else{total= total+time.getSeconds();}	
+				
+
+							if (time.getHours()>=12)
+								total= total+" P.M.";
+							else
+								total= total+" A.M.";
+
+							document.getElementById("showinfo").innerHTML=  total ;
+							setTimeout("displayclock()",1000);
+		}
+		}
+			
+		
+</script>
+<script type="text/Javascript">
+function Fishes(){
+ for(var attempt=1; attempt<4;attempt++){
+ 
+  var num=parseInt(prompt( "pick a number between 1 and 5", " ")); 
+  
+	if(num==1){
+		win=window.open("fish1.html","newwindow","width=300,height=250"); 
+	}else if(num==2){
+		win=window.open("fish2.html","newwindow","width=300,height=250");
+	}else if(num==3){
+		win=window.open("fish3.html","newwindow","width=300,height=250");
+	}else if(num==4){
+		win=window.open("fish4.html","newwindow","width=300,height=250");
+	}else{
+		win=window.open("fish5.html","newwindow","width=300,height=250");
+	}
+ }
+}
+</script>
+</head>
+
+<body id="navAct" class="Act" onload="displayclock()" onload="Fishes()">
+
+<div class="divcol1">
+<h2> Activities</h2>
+<p id="showinfo">
+</p>
+</div>
+
+<br/>
+<ul id="navAct" >
+	<li id="navActli"><a href="../Mainpage/mainpageB.html">Back to main page</a></li>
+	<li id="navActli"><a href="../Accommodations/Accommodations.html">Accommodations</a></li>
+	<li id="navActli"><a href="../Restaurants/restaurants.html">Restaurants</a></li>
+	<li id="navActli"><a href="../Shopping/shopping.html">Shopping</a></li>
+</ul>
+
+<table border="3" id="table4">
+<caption></caption>
+	<tr>
+		<td class="td4">
+			<center> 
+						<input type="button" value="Explore Tropical Fishes" onclick="Fishes()" />
+			</center>
+			<img src="imagesAct/scubafish.jpg" height="200" width="300" alt="Hotel Villa Blanca" />
+		</td>
+	
+	</tr>
+	<tr>
+		<td class="td4">
+		<center>So much to do!!!!</center>
+			<ul >
+				<li class="listStyle1"> Scuba Diving At:
+					<ol>
+					<li class="listStyle2">Deep blue</li>
+					<li class="listStyle2">Dive Paradise</li>
+					</ol>
+				</li>
+				<li class="listStyle1"> skydiving At:
+					<ol>
+					<li class="listStyle2">Playa del Carmen</li>
+					<li class="listStyle2">SkyDive Playa</li>
+					</ol>
+				</li>
+				<li class="listStyle1"> Swimming with dolphins At:
+					<ol>
+					<li class="listStyle2">Dolphin Discovery</li>
+					<li class="listStyle2">Cozumel Dolphinaris</li>
+					</ol>
+				</li>
+			</ul>
+		</td>
+	</tr>
+	
+</table>
+
+</body>
+
+</html>

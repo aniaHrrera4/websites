@@ -1,0 +1,99 @@
+<!doctype HTML>
+<html>
+
+<head>
+<title>Shopping</title>
+<link rel="stylesheet" type="text/css" href="../style sheet island.css" />
+<script type="text/Javascript">
+function displayclock() {
+		var total="It's time for a tropical vacation!!!! the current time is: <br/>";
+        var time = new Date();{
+			
+							if (time.getHours()==0)
+							{ time.getHours()=12;}
+							
+			var hours=time.getHours()
+			var hour=parseInt(hours)-12;
+				  
+							if (time.getHours()>=12)
+								{total=total+hour+":";}
+								
+							if (time.getHours()<=12)
+								{total=total+hours+":";}
+                  
+							if (time.getMinutes()<10)
+									total=total+ "0"+time.getMinutes()+":";
+							else {total=total+time.getMinutes()+":";}
+
+							if (time.getSeconds()<10)
+									 {total=total+"0"+time.getSeconds();}
+							else{total= total+time.getSeconds();}	
+				
+
+							if (time.getHours()>=12)
+								total= total+" P.M.";
+							else
+								total= total+" A.M.";
+
+							document.getElementById("showinfo").innerHTML=  total ;
+							setTimeout("displayclock()",1000);
+		}
+		}
+			
+		
+</script>
+<script type="text/Javascript">
+function stores(){
+var num=parseInt(prompt( "what type of store are you looking for? (1) souvenir store (2) clothing store (3)Decorative crafts", " "));
+	 switch (num) {
+						case 0:
+							win1=window.open("fish1.html","newwindow","width=600,height=400");
+							break;
+						case 1:
+							win1=window.open("souvenir.html","newwindow","width=600,height=400");
+							
+							break;
+						case 2:
+							win1=window.open("clothing.html","newwindow","width=600,height=400");
+							break;
+						case 3:
+							win1=window.open("crafts.html","newwindow","width=600,height=400");
+							break;
+}
+}
+</script>
+</head>
+
+<body id="navShop" class="Shop" onload="displayclock()" onload="stores()">
+
+<div class="divcol1">
+<h2> Shopping</h2>
+<p id="showinfo">
+</p>
+</div>
+
+<br/><br/><br/><br/>
+<ul id="navShop" >
+	<li id="navShopli"><a href="../Mainpage/mainpageB.html">Back to main page</a></li>
+	<li id="navShopli"><a href="../Accommodations/Accommodations.html">Accommodations</a></li>
+	<li id="navShopli"><a href="../Restaurants/restaurants.html">Restaurants</a></li>
+	<li id="navShopli"><a href="../Activities/activities.html">Activities</a></li>
+</ul>
+
+<div border="3" id="table5" class="td5">
+<center>stores</center>
+<ol>
+	<li>Souvenir shop</li>
+	<li>clothing store</li>
+	<li>Decorative crafts</li>
+</ol>
+
+			<center> 
+						<input type="button" value="Find a store" onclick="stores()" />
+			</center>
+</div>
+
+</body>
+
+
+</html>

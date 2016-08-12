@@ -1,0 +1,76 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>while loop game </title>
+ 
+<style type="text/css"> 
+body{background-color:	#862d59;
+ color: white;
+ text-align: center
+ }
+</style>
+<script type="text/JavaScript">
+
+var answer= Math.floor((Math.random() * 100) + 1);
+	
+var guess=0;
+var attempt=1; 
+var gameON=true;
+
+function resetvars(){
+ answer= Math.floor((Math.random() * 100) + 1);
+	alert(answer);
+guess=0;
+attempt=1; 
+gameON=true;
+}
+
+function guessGame(){
+resetvars();
+	while (attempt<=3 && gameON) {
+		guess=parseInt(prompt("choose a number between 0 and 100 attempt: " +attempt , "  ")); 
+		
+		while((guess <1) || (guess>100)) { 
+					guess=parseInt(prompt("choose a number between 0 and 100 your answer was not in range attempt: " +attempt , "  ")); 
+				}
+			if (guess == answer ) {
+				document.getElementById("output").innerHTML = guess +" "+ "yes you are correct <br/> you WIN!!!!!!! on attempt:" +attempt;
+				gameON=false
+			} if (attempt==3){
+					document.getElementById("output").innerHTML ="you lose it took you "+attempt+ " attempts" ; 
+				gameON=false	
+			} else if (guess > answer) {
+				document.getElementById("output").innerHTML = guess +" "+ "is too high";
+			}
+			else if (guess < answer){
+				document.getElementById("output").innerHTML = guess + " "+ "is too low";
+			}
+			
+			attempt++
+			
+	}
+	
+}
+</script>
+</head>
+
+
+<center>
+<body>
+<br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+
+<div id="form"  >
+	<form>
+		<!-- the function call  -->
+		<input type="button" value="Play!" onclick="guessGame()"/>
+	</form>
+</div>
+<br/><br/>
+
+<div id ="output">
+
+</div>
+
+ </body>
+</center>
+</html>
